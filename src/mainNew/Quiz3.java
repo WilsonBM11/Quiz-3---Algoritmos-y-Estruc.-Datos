@@ -75,7 +75,7 @@ public class Quiz3 {
             d.add(new JobPosition("Operario",25));
             
             
-            reference.next = a.getNode(1);
+            reference = a.getNode(1);
             a.getNode(a.size()).next = b.getNode(1);
             b.getNode(b.size()).next = c.getNode(1);
             c.getNode(c.size()).next = d.getNode(1);            
