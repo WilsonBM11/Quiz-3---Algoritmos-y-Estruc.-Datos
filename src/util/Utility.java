@@ -9,8 +9,10 @@ import domain.DoublyLinkedList;
 import domain.SinglyLinkedList;
 import domain.CircularLinkedList;
 import domain.CircularDoublyLinkedList;
+import domain.Courses;
 import domain.Employee;
 import domain.JobPosition;
+import domain.Student;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -137,6 +139,8 @@ public class Utility {
         if(a instanceof Character && b instanceof Character) return "Character";
         if(a instanceof Employee && b instanceof Employee) return "Employee";
         if(a instanceof JobPosition && b instanceof JobPosition) return "JobPosition";
+        if(a instanceof Student && b instanceof Student) return "Student";
+        if(a instanceof Courses && b instanceof Courses) return "Courses";
         return "unknown";
     }
 
@@ -152,12 +156,18 @@ public class Utility {
             case "Character":
                 Character a3=(Character)a; Character b3=(Character)b;
                 return a3.compareTo(a3)==0;
+            case "Student":
+                Student a4 = (Student)a; Student b4 = (Student)b;
+                return a4.getId().equals(b4.getId());  
+            case "Courses":
+                Courses a5 = (Courses)a; Courses b5 = (Courses)b;
+                return a5.getId().equals(b5.getId());
             case "JobPosition":
-                JobPosition a4=(JobPosition)a; JobPosition b4=(JobPosition)b;
-                return a4.getDescription().equalsIgnoreCase(b4.getDescription());
+                JobPosition a6=(JobPosition)a; JobPosition b6=(JobPosition)b;
+                return a6.getDescription().equalsIgnoreCase(b6.getDescription());
             case "Employee":
-                Employee a5=(Employee)a; Employee b5=(Employee)b;
-                return a5.getId() == b5.getId();
+                Employee a7=(Employee)a; Employee b7=(Employee)b;
+                return a7.getId() == b7.getId();
         }
         return false;
     }
@@ -192,6 +202,12 @@ public class Utility {
 //                    case "Description":
 //                        return a5.getDescription().compareToIgnoreCase(b5.getDescription()) < 0;
 //                }
+            case "Student":
+                Student a4 = (Student)a; Student b4 = (Student)b;
+                return a4.getName().compareToIgnoreCase(b4.getName()) < 0;
+            case "Courses":
+                Courses a5 = (Courses)a; Courses b5 = (Courses)b;
+                return a5.getName().compareToIgnoreCase(b5.getName()) < 0;
         }
         return false; 
     }
@@ -225,6 +241,12 @@ public class Utility {
 //                    case "Description":
 //                        return a5.getDescription().compareToIgnoreCase(b5.getDescription()) > 0;
 //                }
+             case "Student":
+                Student a4 = (Student)a; Student b4 = (Student)b;
+                return a4.getName().compareToIgnoreCase(b4.getName()) > 0;
+            case "Courses":
+                Courses a5 = (Courses)a; Courses b5 = (Courses)b;
+                return a5.getName().compareToIgnoreCase(b5.getName()) > 0;
         }
         return false;
     }
